@@ -1,0 +1,11 @@
+[package]
+name = "stembed"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+unicode-normalization-alignments = "0.1.12"
+unicode_categories = "0.1.1"
+
+[features]
+potion-base-8m = []

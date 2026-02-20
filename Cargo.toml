@@ -1,0 +1,6 @@
+[workspace]
+members = ["crates/stembed", "crates/stembed-wasm"]
+resolver = "3"
+
+[profile.release]
+opt-level = 3
