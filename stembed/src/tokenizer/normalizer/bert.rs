@@ -36,6 +36,13 @@ fn is_control(c: char) -> bool {
 /// as is Japanese Hiragana and Katakana. Those alphabets are used to write
 /// space-separated words, so they are not treated specially and handled
 /// like for all of the other languages.
+/// Checks whether a character is punctuation per BERT's definition.
+/// Matches `is_bert_punc` in HF tokenizers' `BertPreTokenizer`:
+/// ASCII punctuation (!, $, +, etc.) plus Unicode `P` category.
+fn is_bert_punctuation(c: char) -> bool {
+    c.is_ascii_punctuation() || c.is_punctuation()
+}
+
 fn is_chinese_char(c: char) -> bool {
     matches!(
         c as usize,
@@ -105,7 +112,7 @@ impl BertNormalizer {
     fn do_handle_bert_punct(&self, normalized: &mut String) -> String {
         let mut new_string = String::new();
         normalized.chars().for_each(|c| {
-            if c.is_punctuation() || c.is_ascii_whitespace() {
+            if is_bert_punctuation(c) || c.is_ascii_whitespace() {
                 new_string.push_str(" ");
                 new_string.push(c);
                 new_string.push_str(" ");

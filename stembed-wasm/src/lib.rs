@@ -17,7 +17,7 @@ static MODEL: OnceLock<Mutex<Option<BERTLikeStaticEmbeddingModel>>> = OnceLock::
 pub fn load(vocab_data: String, model_data: &[u8]) {
     panic::set_hook(Box::new(console_error_panic_hook::hook));
 
-    let vocab = Vocab::from_newline_deliminated_string(&vocab_data);
+    let vocab = Vocab::from_newline_deliminated_string(&vocab_data, 1);
 
     MODEL
         .get_or_init(|| Mutex::new(None))

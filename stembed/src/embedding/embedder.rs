@@ -10,6 +10,7 @@ pub enum Endianness {
     Big,
 }
 
+#[derive(Debug)]
 pub enum WeightsDType {
     F32,
     F16,

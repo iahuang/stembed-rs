@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 
+#[derive(Debug)]
 pub struct Vocab {
     pub vocab: HashMap<String, usize>,
     pub unk_token_id: usize,
