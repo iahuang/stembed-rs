@@ -1,6 +1,6 @@
 # `stembed-rs`
 
-A lightweight Rust library for hosting [static embedding models](https://huggingface.co/blog/static-embeddings) with included WASM bindings.
+A lightweight Rust library for hosting [static embedding models](https://huggingface.co/blog/static-embeddings) with included WASM bindings. This library is minimal, avoiding dependencies on ONNX runtime or other general-purpose machine learning frameworks.
 
 ## Static Embedding Models
 
