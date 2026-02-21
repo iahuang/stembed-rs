@@ -8,9 +8,10 @@ Static embedding models offer a highly efficient alternative to transformer-base
 
 ## Supported Models
 
-Pretrained weights for each model can be bundled into your Rust application using their corresponding feature flag. This allows you to skip writing logic for downloading model weights at the cost of a larger bundle size.
+Potion-Base-8M has a feature flag to bundle the model weights (15MB) into your application, skipping the need to download the weights at runtime. Using the `huggingface` feature flag, additional models can be downloaded from Hugging Face at runtime.
 
 | Model | Dimensions | Feature Flag |
 |-------|-----------|--------------|
 | [Potion-Base-8M](https://huggingface.co/minishlab/potion-base-8M) | 256 | `potion-base-8m` |
-
+| [Sentence Transformers Static Retrieval English](https://huggingface.co/sentence-transformers/static-retrieval-mrl-en-v1) | 1024 | N/A |
+| [Sentence Transformers Static Similarity Multilingual](https://huggingface.co/sentence-transformers/static-similarity-mrl-multilingual-v1) | 1024 | N/A |

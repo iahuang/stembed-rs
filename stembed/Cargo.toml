@@ -1,0 +1,17 @@
+[package]
+name = "stembed"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+half = { version = "2.7.1", features = ["std"] }
+hf-hub = { version = "0.5.0", optional = true }
+safetensors = { version = "0.7.0", optional = true }
+serde = "1.0.228"
+serde_json = "1.0.149"
+unicode-normalization-alignments = "0.1.12"
+unicode_categories = "0.1.1"
+
+[features]
+potion-base-8m = []
+huggingface = ["hf-hub", "safetensors"]

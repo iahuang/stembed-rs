@@ -1,5 +1,5 @@
 [workspace]
-members = ["crates/stembed", "crates/stembed-wasm"]
+members = ["stembed", "stembed-wasm"]
 resolver = "3"
 
 [profile.release]
